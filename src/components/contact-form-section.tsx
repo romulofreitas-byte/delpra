@@ -33,12 +33,12 @@ export function ContactFormSection() {
       <div className="absolute -bottom-24 right-0 h-72 w-72 rounded-full bg-brand-navy/20 blur-3xl" />
 
       <div className="section-shell relative grid items-start gap-8 lg:grid-cols-[1fr_1.2fr]">
-        <div className="space-y-5">
+        <div className="space-y-5 text-center lg:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-navy/80">Contato direto</p>
           <h2 className="text-3xl font-semibold leading-tight text-balance sm:text-4xl">
             Fale com a Delpra e receba retorno rápido
           </h2>
-          <p className="max-w-md text-sm text-brand-navy/85 sm:text-base">
+          <p className="mx-auto max-w-md text-sm text-brand-navy/85 sm:text-base lg:mx-0">
             Deixe seus dados para atendimento comercial ou clique no WhatsApp para ação imediata.
           </p>
           <div className="inline-flex items-center gap-2 rounded-full border border-brand-navy/20 bg-white/35 px-4 py-2 text-xs font-medium sm:text-sm">

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Package, Sparkles } from "lucide-react";
+import { MessageCircle, Package, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { MotionReveal } from "./motion-reveal";
 
@@ -18,13 +18,14 @@ type Product = {
 
 const products: Product[] = [
   {
-    name: "Blocos",
-    use: "Estrutura e base",
-    description: "Blocos de concreto com padrão dimensional para alvenaria estrutural e vedação em obras de diferentes portes.",
-    applications: ["Alvenaria estrutural", "Vedação", "Obras comerciais e residenciais"],
-    points: ["Alta resistência", "Padrão de lote", "Entrega confiável"],
+    name: "Blocos e Canaletas",
+    use: "Estrutura e vedação",
+    description:
+      "Blocos e canaletas de concreto são a base de uma construção segura e bem estruturada, com resistência, durabilidade e agilidade na obra.",
+    applications: ["Alvenaria estrutural", "Vedação", "Fundação ao acabamento"],
+    points: ["Resistência", "Agilidade na obra", "Peças confiáveis"],
     gradient: "from-[#4265bb] via-[#2f4e9e] to-[#122d5f]",
-    image: "Bloco 14.jpeg",
+    image: "blocos.jpeg",
   },
   {
     name: "Bloco Curvo",
@@ -36,69 +37,66 @@ const products: Product[] = [
     image: "Bloco Curvo.jpeg",
   },
   {
-    name: "Pavers",
-    use: "Pavimentação",
-    description: "Peças intertravadas de alta resistência para calçadas, pátios e áreas de circulação intensa.",
-    applications: ["Calçadas", "Garagens", "Pátios"],
-    points: ["Durabilidade", "Fácil manutenção", "Acabamento uniforme"],
+    name: "Pavers (Intertravado)",
+    use: "Pavimentação externa",
+    description:
+      "Pavers de concreto (piso intertravado) são peças pré-moldadas de alta resistência para pavimentação, com travamento que distribui cargas e entrega alta durabilidade.",
+    applications: ["Calçadas e passeios", "Garagens e estacionamentos", "Praças e áreas públicas"],
+    points: ["Alta resistência", "Fácil manutenção", "Boa drenagem"],
     gradient: "from-[#3e63b7] via-[#315292] to-[#102953]",
-    image: "Pavers.jpeg",
+    image: "intertravados.jpeg",
   },
   {
-    name: "Postes e Alambrados",
-    use: "Cercamento",
-    description: "Sistema pré-moldado para cercamentos resistentes em áreas urbanas, rurais e industriais.",
-    applications: ["Chácaras", "Indústrias", "Divisão de terrenos"],
-    points: ["Montagem ágil", "Baixa manutenção", "Segurança"],
+    name: "Placas e Postes",
+    use: "Fechamento de terrenos e muros",
+    description:
+      "As placas pré-moldadas são uma solução moderna, resistente e econômica para fechamento de terrenos e muros, com instalação rápida, obra limpa e excelente acabamento.",
+    applications: ["Fechamento de terrenos", "Muros", "Obras rápidas e padronizadas"],
+    points: ["Rapidez na obra", "Durabilidade", "Ótimo custo-benefício"],
     gradient: "from-[#315baf] via-[#2f4b8c] to-[#0f2349]",
-    image: "Postes e Alambrados.jpeg",
-  },
-  {
-    name: "Meios-fios",
-    use: "Urbanização",
-    description: "Elementos pré-moldados para delimitação de vias, calçadas e canteiros com acabamento padronizado.",
-    applications: ["Ruas", "Condomínios", "Loteamentos"],
-    points: ["Padrão visual", "Resistência", "Agilidade na execução"],
-    gradient: "from-[#476aba] via-[#304d90] to-[#152f63]",
+    image: "Placas.jpeg",
   },
   {
     name: "Lajes",
-    use: "Cobertura e piso",
-    description: "Lajes pré-moldadas para acelerar a execução com qualidade e desempenho estrutural.",
-    applications: ["Residências", "Comércio", "Ampliações"],
-    points: ["Rapidez na obra", "Confiabilidade", "Versatilidade"],
+    use: "Pisos e coberturas",
+    description:
+      "Lajes treliçadas pré-moldadas unem rapidez, economia e alto desempenho estrutural, com vigotas treliçadas e concretagem de capa para formar uma laje monolítica.",
+    applications: ["Casas e sobrados", "Edifícios residenciais", "Garagens e varandas"],
+    points: ["Alta resistência", "Execução rápida", "Menos desperdício"],
     gradient: "from-[#4a74ca] via-[#3a4f9b] to-[#1c2f65]",
     image: "Lajes.jpeg",
   },
   {
-    name: "Cercas de Concreto",
-    use: "Fechamento",
-    description: "Soluções de fechamento com painéis de concreto para delimitar áreas com robustez e longa vida útil.",
-    applications: ["Perímetros", "Áreas rurais", "Empreendimentos"],
-    points: ["Alta durabilidade", "Privacidade", "Resistência ao tempo"],
+    name: "Alambrados",
+    use: "Cercamento",
+    description:
+      "Cercamentos com postes e estrutura pré-moldada para dividir áreas com segurança, montagem ágil e baixa manutenção em ambientes urbanos, rurais e industriais.",
+    applications: ["Chácaras", "Indústrias", "Divisão de terrenos"],
+    points: ["Montagem ágil", "Baixa manutenção", "Segurança"],
     gradient: "from-[#4062b1] via-[#304d8f] to-[#122b59]",
+    image: "Postes e Alambrados.jpeg",
   },
   {
-    name: "Locação de Contêineres",
-    use: "Apoio de obra",
-    description: "Containers para apoio operacional em canteiros e operações temporárias com praticidade logística.",
-    applications: ["Escritório de obra", "Depósito", "Apoio operacional"],
-    points: ["Praticidade", "Mobilidade", "Solução rápida"],
+    name: "Tijolo Aparente",
+    use: "Acabamento aparente",
+    description: "Muro em tijolo aparente de concreto – mais resistência, mais durabilidade e menos manutenção.",
+    applications: ["Fachadas", "Muros", "Detalhes decorativos"],
+    points: ["Visual aparente", "Resistência", "Baixa manutenção"],
     gradient: "from-[#4368bd] via-[#304f95] to-[#142f61]",
-  },
-  {
-    name: 'Tijolinho "Pó de Mico"',
-    use: "Acabamento rústico",
-    description: "Ideal para bloco à vista e arquitetura rústica/biofílica com personalidade.",
-    applications: ["Fachadas", "Espaços gourmet", "Detalhes decorativos"],
-    points: ["Visual rústico", "Bloco à vista", "Valoriza o projeto"],
-    gradient: "from-[#4a74ca] via-[#3a4f9b] to-[#1c2f65]",
+    image: "Tijolinho.jpeg",
   },
 ];
 
 export function ProductsGrid() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProduct = products[activeIndex];
+
+  const scrollToCard = (index: number) => {
+    const el = typeof document !== "undefined" ? document.getElementById(`catalog-tab-${index}`) : null;
+    if (el && "scrollIntoView" in el) {
+      el.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    }
+  };
 
   return (
     <section className="py-16 sm:py-20">
@@ -116,11 +114,26 @@ export function ProductsGrid() {
 
         <div className="space-y-4">
           <MotionReveal className="catalog-nav-shell rounded-[1.75rem] border border-concrete-300/70 bg-white/90 p-2 shadow-[0_18px_44px_rgba(36,57,105,0.1)] backdrop-blur">
-            <div
-              className="catalog-nav-row no-scrollbar flex snap-x gap-2 overflow-x-auto px-1 py-1 sm:gap-2.5 lg:flex-wrap lg:justify-center lg:gap-3 lg:overflow-visible lg:snap-none"
-              role="tablist"
-              aria-label="Selecione um produto do catálogo Delpra"
-            >
+            <div className="flex items-center gap-1 sm:gap-2">
+              <button
+                type="button"
+                className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-concrete-300/80 bg-white text-[0.75rem] font-semibold text-concrete-700 shadow-sm transition hover:bg-concrete-100/80 sm:h-9 sm:w-9"
+                onClick={() => {
+                  setActiveIndex((prev) => {
+                    const nextIndex = prev === 0 ? products.length - 1 : prev - 1;
+                    scrollToCard(nextIndex);
+                    return nextIndex;
+                  });
+                }}
+                aria-label="Ver produto anterior"
+              >
+                ‹
+              </button>
+              <div
+                className="catalog-nav-row no-scrollbar flex snap-x snap-mandatory gap-2 overflow-x-auto px-1 py-1 sm:gap-2.5 lg:flex-wrap lg:justify-center lg:gap-3 lg:overflow-visible lg:snap-none"
+                role="tablist"
+                aria-label="Selecione um produto do catálogo Delpra"
+              >
               {products.map((product, index) => {
                 const active = index === activeIndex;
 
@@ -129,7 +142,6 @@ export function ProductsGrid() {
                     key={product.name}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    aria-pressed={active}
                     role="tab"
                     aria-selected={active}
                     aria-controls="catalog-highlight-panel"
@@ -162,8 +174,27 @@ export function ProductsGrid() {
                   </motion.button>
                 );
               })}
+              </div>
+              <button
+                type="button"
+                className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-concrete-300/80 bg-white text-[0.75rem] font-semibold text-concrete-700 shadow-sm transition hover:bg-concrete-100/80 sm:h-9 sm:w-9"
+                onClick={() => {
+                  setActiveIndex((prev) => {
+                    const nextIndex = prev === products.length - 1 ? 0 : prev + 1;
+                    scrollToCard(nextIndex);
+                    return nextIndex;
+                  });
+                }}
+                aria-label="Ver próximo produto"
+              >
+                ›
+              </button>
             </div>
           </MotionReveal>
+
+          <p className="mt-1 text-center text-[0.7rem] font-medium uppercase tracking-[0.18em] text-concrete-700/70 sm:hidden">
+            Arraste os cards para o lado ou use as setas para ver todos os produtos
+          </p>
 
           <MotionReveal delay={0.05}>
             <div
@@ -188,7 +219,7 @@ export function ProductsGrid() {
                     {activeProduct.image ? (
                       <>
                         <Image
-                          src={`/${activeProduct.image}`}
+                          src={`/produtos/${activeProduct.image}`}
                           alt={activeProduct.name}
                           fill
                           className="object-cover"
@@ -246,13 +277,15 @@ export function ProductsGrid() {
                       ))}
                     </div>
 
-                    <button
-                      type="button"
+                    <a
+                      href="https://wa.me/5534999122128?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20da%20Delpra%20Pr%C3%A9-Moldados."
+                      target="_blank"
+                      rel="noreferrer"
                       className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-primary/25 bg-brand-primary/10 px-4 py-2 text-sm font-semibold text-brand-primary transition hover:translate-x-1 hover:bg-brand-primary/15"
                     >
-                      Ver aplicações em obra
-                      <ArrowUpRight size={16} />
-                    </button>
+                      <MessageCircle size={16} />
+                      Solicitar orçamento pelo WhatsApp
+                    </a>
                   </div>
                 </motion.div>
               </AnimatePresence>

@@ -33,7 +33,7 @@ export function TechnicalDifferentials() {
   return (
     <section className="bg-gradient-to-b from-concrete-100/70 to-transparent py-16 sm:py-20">
       <div className="section-shell">
-        <MotionReveal>
+        <MotionReveal className="text-center sm:text-left">
           <p className="section-kicker">Tecnologia e eficiência</p>
           <h2 className="mt-2 text-2xl font-semibold text-concrete-700 sm:text-3xl">
             Diferenciais técnicos para construtores e obras residenciais

@@ -26,7 +26,7 @@ export default function Home() {
       <WhatsAppFloat />
       <div className="section-shell py-8">
         <section className="px-2 py-3 text-center text-xs text-concrete-700/70">
-          Palavras-chave: blocos laudados Uberaba, tijolinho rústico Uberlândia,
+          Palavras-chave: blocos laudados Uberaba, tijolo aparente Uberlândia,
           cercamento pré-moldado Rifaina, pré-moldados para chácaras Ponte Alta.
         </section>
       </div>

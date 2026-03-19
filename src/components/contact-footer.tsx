@@ -3,7 +3,7 @@ import Image from "next/image";
 export function ContactFooter() {
   return (
     <footer className="bg-brand-navy py-10 text-white">
-      <div className="section-shell grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+      <div className="section-shell grid gap-6 lg:grid-cols-2 lg:items-center">
         <div>
           <Image
             src="/Logo%20Delpra%20transparente%201.png"
@@ -35,11 +35,11 @@ export function ContactFooter() {
             transparência.
           </p>
         </div>
-        <div className="overflow-hidden rounded-xl border border-white/20 shadow-[0_12px_26px_rgba(0,0,0,0.25)]">
+        <div className="h-full overflow-hidden rounded-xl border border-white/20 shadow-[0_12px_26px_rgba(0,0,0,0.25)]">
           <iframe
             title="Mapa Delpra Pré-Moldados"
             src="https://www.google.com/maps?q=Rua+Clara+Alves+de+Mello,+461,+Uberaba,+MG&output=embed"
-            className="h-[200px] w-full sm:h-[220px]"
+            className="h-full min-h-[220px] w-full sm:min-h-[240px]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />

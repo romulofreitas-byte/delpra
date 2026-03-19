@@ -17,7 +17,7 @@ const testimonials = [
     segment: "Residencial",
     name: "Obra Residencial em Sacramento",
     quote:
-      'O tijolinho "Pó de Mico" ficou excelente no bloco à vista. Atendimento transparente, do pedido à entrega.',
+      "O tijolo aparente ficou excelente no bloco à vista. Atendimento transparente, do pedido à entrega.",
     rating: 5,
     highlight: "Acabamento rústico e orientação na aplicação",
   },
@@ -81,14 +81,14 @@ export function SocialProof() {
   return (
     <section className="py-16 sm:py-20">
       <div className="section-shell">
-        <MotionReveal className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
+        <MotionReveal className="flex flex-col gap-4 text-center sm:flex-row sm:items-end sm:justify-between sm:text-left">
+          <div className="mx-auto max-w-xl sm:mx-0">
             <p className="section-kicker">Provas sociais</p>
             <h2 className="mt-2 text-2xl font-semibold text-concrete-700 sm:text-3xl">
               Resultados reais em diferentes perfis de obra e cidade.
             </h2>
           </div>
-          <p className="max-w-md text-sm text-concrete-700/80">
+          <p className="mx-auto max-w-md text-sm text-concrete-700/80 sm:mx-0">
             Depoimentos da nova fase da Delpra, com foco em transparência, padrão técnico e entrega previsível.
           </p>
         </MotionReveal>

@@ -133,3 +133,15 @@ h3 {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.hero-section {
+  background-image: url("/capa delpra4 mobile.png");
+  background-position: center calc(50% + 2.5rem);
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    background-image: url("/capa delpra4.png");
+    background-position: center;
+  }
+}

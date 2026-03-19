@@ -26,7 +26,7 @@ const regions: Region[] = [
     profile: "Atendimento recorrente para obras residenciais e comerciais.",
     distance: "95-120 km",
     leadTime: "Janela programada",
-    focus: ["Bloco 14", "Tijolinho Pó de Mico", "Pavers"],
+    focus: ["Bloco 14", "Tijolo Aparente", "Pavers"],
   },
   {
     name: "Delta e Sacramento",
@@ -47,7 +47,7 @@ const regions: Region[] = [
     profile: "Demanda forte em cercamento pré-moldado para áreas rurais.",
     distance: "80-140 km",
     leadTime: "Expedição sob agenda",
-    focus: ["Placas e Postes", "Tijolinho Pó de Mico", "Bloco Curvo"],
+    focus: ["Placas e Postes", "Tijolo Aparente", "Bloco Curvo"],
   },
 ];
 
@@ -62,7 +62,7 @@ export function RegionsPresence() {
       <div className="absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-brand-accent/20 blur-3xl" />
 
       <div className="section-shell relative">
-        <MotionReveal>
+        <MotionReveal className="text-center sm:text-left">
           <p className="section-kicker !text-white/80">Regiões de atuação Delpra</p>
           <h2 className="mt-2 max-w-3xl text-2xl font-semibold text-white sm:text-3xl">
             Cobertura regional com logística inteligente para manter o ritmo da sua obra

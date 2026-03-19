@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Blocos laudados Uberaba",
     "Blocos de concreto em Uberaba",
     "Pré-moldados Uberaba",
-    "Tijolinho rústico Uberlândia",
+    "Tijolo aparente Uberlândia",
     "Cercamento pré-moldado Rifaina",
     "Pré-moldados para chácaras Ponte Alta",
     "Bloco 14 estrutural",
