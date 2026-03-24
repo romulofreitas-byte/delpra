@@ -8,13 +8,15 @@ const geistSans = Geist({
 });
 
 const siteUrl = "https://delprapremoldados.com.br";
-const ogLogo = `${siteUrl}/Logo%20Delpra.png`;
+const logoDelpraFile = "Logo Delpra.png";
+const logoDelpraPath = `/${encodeURIComponent(logoDelpraFile)}`;
+const logoDelpraUrl = new URL(logoDelpraPath, siteUrl).href;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: "/Logo%20Delpra.png",
-    apple: "/Logo%20Delpra.png",
+    icon: logoDelpraPath,
+    apple: logoDelpraPath,
   },
   title: "Delpra Pré-Moldados | Blocos Laudados em Uberaba e Região",
   description:
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: ogLogo,
+        url: logoDelpraUrl,
         alt: "Delpra Pré-Moldados",
       },
     ],
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     title: "Delpra Pré-Moldados | Engenharia, laudo MPA e logística regional",
     description:
       "Padrão Delpra: traço exclusivo, conformidade MPA/ABNT e logística otimizada para Uberaba, Delta, Sacramento e Conceição das Alagoas.",
-    images: [ogLogo],
+    images: [logoDelpraUrl],
   },
 };
 
