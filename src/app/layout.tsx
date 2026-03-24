@@ -7,8 +7,11 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://delprapremoldados.com.br";
+const ogLogo = `${siteUrl}/Logo%20Delpra.png`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://delprapremoldados.com.br"),
+  metadataBase: new URL(siteUrl),
   icons: {
     icon: "/Logo%20Delpra.png",
     apple: "/Logo%20Delpra.png",
@@ -33,10 +36,23 @@ export const metadata: Metadata = {
     title: "Delpra Pré-Moldados | Engenharia, laudo MPA e logística regional",
     description:
       "Padrão Delpra: traço exclusivo, conformidade MPA/ABNT e logística otimizada para Uberaba, Delta, Sacramento e Conceição das Alagoas.",
-    url: "https://delprapremoldados.com.br",
+    url: siteUrl,
     siteName: "Delpra Pré-Moldados",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: ogLogo,
+        alt: "Delpra Pré-Moldados",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Delpra Pré-Moldados | Engenharia, laudo MPA e logística regional",
+    description:
+      "Padrão Delpra: traço exclusivo, conformidade MPA/ABNT e logística otimizada para Uberaba, Delta, Sacramento e Conceição das Alagoas.",
+    images: [ogLogo],
   },
 };
 
