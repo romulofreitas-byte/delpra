@@ -9,6 +9,10 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://delprapremoldados.com.br"),
+  icons: {
+    icon: "/Logo%20Delpra.png",
+    apple: "/Logo%20Delpra.png",
+  },
   title: "Delpra Pré-Moldados | Blocos Laudados em Uberaba e Região",
   description:
     "Delpra Pré-Moldados em Uberaba/MG: traço exclusivo, laudo MPA e conformidade ABNT para obras residenciais, comerciais e rurais com logística otimizada na região.",
