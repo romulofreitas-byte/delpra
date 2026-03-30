@@ -8,6 +8,10 @@ const geistSans = Geist({
 });
 
 const siteUrl = "https://delprapremoldados.com.br";
+
+const faviconFile = "Favicon.png";
+const faviconPath = `/${encodeURIComponent(faviconFile)}`;
+
 const logoDelpraFile = "Logo Delpra.png";
 const logoDelpraPath = `/${encodeURIComponent(logoDelpraFile)}`;
 const logoDelpraUrl = new URL(logoDelpraPath, siteUrl).href;
@@ -15,8 +19,8 @@ const logoDelpraUrl = new URL(logoDelpraPath, siteUrl).href;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   icons: {
-    icon: logoDelpraPath,
-    apple: logoDelpraPath,
+    icon: faviconPath,
+    apple: faviconPath,
   },
   title: "Delpra Pré-Moldados | Blocos Laudados em Uberaba e Região",
   description:
