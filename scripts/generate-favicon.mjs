@@ -6,10 +6,9 @@ import pngToIco from "png-to-ico";
 const repoRoot = process.cwd();
 
 const inputPath = path.join(repoRoot, "public", "Favicon.png");
-const outputIconPath = path.join(repoRoot, "src", "app", "icon.png");
-const outputApplePath = path.join(repoRoot, "src", "app", "apple-icon.png");
+const outputIconPath = path.join(repoRoot, "public", "icon.png");
+const outputApplePath = path.join(repoRoot, "public", "apple-icon.png");
 const outputIcoPath = path.join(repoRoot, "public", "favicon.ico");
-const outputAppIcoPath = path.join(repoRoot, "src", "app", "favicon.ico");
 
 function parsePng(filePath) {
   return new Promise((resolve, reject) => {
@@ -63,12 +62,10 @@ async function main() {
 
   const icoBuffer = await pngToIco(outputIconPath);
   fs.writeFileSync(outputIcoPath, icoBuffer);
-  fs.writeFileSync(outputAppIcoPath, icoBuffer);
 
   console.log(`Wrote ${outputIconPath}`);
   console.log(`Wrote ${outputApplePath}`);
   console.log(`Wrote ${outputIcoPath}`);
-  console.log(`Wrote ${outputAppIcoPath}`);
 }
 
 main().catch((err) => {
