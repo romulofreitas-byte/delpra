@@ -66,7 +66,16 @@ export async function POST(request: Request) {
     }),
   });
 
-  const data = (await response.json()) as { success?: boolean; message?: string };
+  const responseText = await response.text();
+  let data: { success?: boolean; message?: string };
+  try {
+    data = JSON.parse(responseText) as { success?: boolean; message?: string };
+  } catch {
+    return NextResponse.json(
+      { success: false, message: "Resposta inválida do serviço de e-mail. Tente novamente." },
+      { status: 502 },
+    );
+  }
 
   if (!response.ok || !data.success) {
     return NextResponse.json(
