@@ -26,9 +26,13 @@ function buildMessage(data: ContactFormData, empresaLabel: string) {
 export async function submitContactForm(
   data: ContactFormData,
 ): Promise<{ success: boolean; message?: string }> {
-  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
   if (!accessKey) {
-    return { success: false, message: "Serviço de envio não configurado." };
+    return {
+      success: false,
+      message:
+        "Serviço de envio não configurado. Confira NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY na Vercel e faça um novo deploy.",
+    };
   }
 
   const empresaLabel = data.empresa || "Não informado";
