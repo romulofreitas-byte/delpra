@@ -1,5 +1,6 @@
 "use client";
 
+import { submitContactForm } from "@/lib/submit-contact-form";
 import { MessageCircle, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
@@ -25,17 +26,17 @@ export function ContactFormSection() {
     const empresa = String(formData.get("empresa") ?? "").trim();
     const consideracoes = String(formData.get("consideracoes") ?? "").trim();
 
+    if (!consideracoes) {
+      setErrorMessage("Descreva as considerações do projeto.");
+      setStatus("error");
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome, telefone, email, empresa, consideracoes }),
-      });
+      const result = await submitContactForm({ nome, telefone, email, empresa, consideracoes });
 
-      const data = (await response.json()) as { success?: boolean; message?: string };
-
-      if (!response.ok || !data.success) {
-        setErrorMessage(data.message ?? "Não foi possível enviar. Tente novamente.");
+      if (!result.success) {
+        setErrorMessage(result.message ?? "Não foi possível enviar. Tente novamente.");
         setStatus("error");
         return;
       }
