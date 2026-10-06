@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
+import { googleProfileUrl, instagramUrl } from "@/lib/brand";
+import { GoogleIcon, InstagramIcon } from "./brand-icons";
 
 export function SiteHeader() {
   return (
@@ -16,19 +18,39 @@ export function SiteHeader() {
           />
         </a>
 
-        <div className="hidden items-center gap-5 text-xs text-white/85 sm:flex">
-          <span className="inline-flex items-center gap-1.5 text-white/75">
-            <MapPin size={14} />
-            Uberaba e região
-          </span>
+        <div className="flex items-center gap-2 text-xs text-white/85 sm:gap-5">
+          <div className="hidden items-center gap-5 sm:flex">
+            <span className="inline-flex items-center gap-1.5 text-white/75">
+              <MapPin size={14} />
+              Uberaba e região
+            </span>
+            <a
+              href="https://wa.me/5534999122128"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 font-semibold text-white transition hover:bg-white/15"
+            >
+              <Phone size={14} />
+              +55 34 99912-2128
+            </a>
+          </div>
           <a
-            href="https://wa.me/5534999122128"
+            href={instagramUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/25 bg-white/10 px-3 py-1.5 font-semibold text-white transition hover:bg-white/15"
+            aria-label="Instagram da Delpra"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 p-2 text-white transition hover:bg-white/15"
           >
-            <Phone size={14} />
-            +55 34 99912-2128
+            <InstagramIcon />
+          </a>
+          <a
+            href={googleProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Google da Delpra"
+            className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 p-2 text-white transition hover:bg-white/15"
+          >
+            <GoogleIcon />
           </a>
         </div>
       </div>

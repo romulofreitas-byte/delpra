@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { googleProfileUrl, instagramUrl } from "@/lib/brand";
+import { GoogleIcon, InstagramIcon } from "./brand-icons";
 
 export function ContactFooter() {
   return (
@@ -28,6 +30,30 @@ export function ContactFooter() {
               rel="noreferrer"
             >
               +55 34 99912-2128
+            </a>
+          </p>
+          <p className="mt-2 text-sm text-white/90 sm:text-base">
+            Instagram:{" "}
+            <a
+              href={instagramUrl}
+              className="inline-flex items-center gap-1.5 font-semibold text-brand-accent underline-offset-4 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <InstagramIcon />
+              @delpra.oficial
+            </a>
+          </p>
+          <p className="mt-2 text-sm text-white/90 sm:text-base">
+            Google:{" "}
+            <a
+              href={googleProfileUrl}
+              className="inline-flex items-center gap-1.5 font-semibold text-brand-accent underline-offset-4 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GoogleIcon />
+              Delpra Pré-Moldados
             </a>
           </p>
           <p className="mt-4 text-xs text-white/60 sm:text-sm">
